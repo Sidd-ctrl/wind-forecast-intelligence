@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: aeron-api
+    runtime: python
+    plan: free
+    region: frankfurt
+    rootDir: backend
+    buildCommand: pip install --no-cache-dir -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: DATA_MODE
+        value: live
+      - key: ANALYSIS_START_DATE
+        value: 2026-01-01
+      - key: ANALYSIS_END_DATE
+        value: 2026-01-31
+      - key: DEFAULT_LEAD_HOURS
+        value: 12
+      - key: ALLOWED_LEAD_HOURS
+        value: 4,8,12,24,36,48
+      - key: CACHE_ENABLED
+        value: true
+      - key: CACHE_DIR
+        value: /tmp/aeron-cache
+      - key: CACHE_TTL_HOURS
+        value: 24
+      - key: CORS_ORIGIN_REGEX
+        value: https://([a-z0-9-]+\.)*vercel\.app
+      - key: CORS_ORIGINS
+        sync: false
