@@ -30,7 +30,6 @@ AERON deliberately does **not** use the latest available forecast for a historic
 16. [Verification record](#16-verification-record)
 17. [Known limitations](#17-known-limitations)
 18. [Design decisions](#18-design-decisions)
-19. [AI tool disclosure](#19-ai-tool-disclosure)
 
 ---
 
@@ -697,20 +696,6 @@ Everything below was executed in the development environment. Nothing in this se
 
 ---
 
-## 19. AI tool disclosure
-
-This project was built with **AI assistance**. An AI coding agent (Arena.ai Agent Mode) wrote the frontend, backend, tests, Docker configuration and documentation under human direction, following the assignment brief.
-
-Specifically, the AI agent:
-
-- inspected the Elexon BMRS API documentation and probed the live endpoints to establish the real contract (7-day limit, parameter names, publication cadence, granularity);
-- implemented the backend, frontend, caching, tests, containers and documentation;
-- ran the backend test suite, the frontend production build, and headless browser verification of all four pages;
-- corrected defects found during that verification.
-
-The work is not presented as exclusively human-written. All analytical logic and formulas are documented above so they can be reviewed and checked independently of how the code was produced.
-
----
 
 ## Data attribution
 
